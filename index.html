@@ -1,96 +1,87 @@
-/* Configuración general del cuerpo de la página */
-body {
-    font-family: Arial, sans-serif;
-    line-height: 1.6;
-    margin: 0;
-    padding: 0;
-    background-color: #f4f4f9;
-    color: #333;
-}
+<!DOCTYPE html>
+<!-- Le decimos al navegador que este documento usa HTML5 -->
+<html lang="es">
+<head>
+  <meta charset="UTF-8"> <!-- Para que se muestren bien las tildes y la ñ -->
+  <title>Login</title> <!-- Texto que aparece en la pestaña del navegador -->
 
-/* Estilos de la cabecera (Header) */
-header {
-    background-color: #2c3e50;
-    color: #ffffff;
-    text-align: center;
-    padding: 2rem 1rem;
-}
+  <style>
+    /* ---------- ESTILOS GENERALES DE LA PÁGINA ---------- */
+    body {
+      display: flex;             /* Convierte el body en un contenedor flexible */
+      justify-content: center;   /* Centra el contenido horizontalmente */
+      align-items: center;       /* Centra el contenido verticalmente */
+      height: 100vh;             /* La altura ocupa el 100% de la pantalla */
+      margin: 0;                 /* Quitamos el margen que trae el navegador por defecto */
+      font-family: Arial, sans-serif; /* Tipo de letra */
+      background-color: #f2f2f2; /* Color de fondo gris claro */
+    }
 
-header h1 {
-    margin: 0;
-    font-size: 2.5rem;
-}
+    /* ---------- LA CAJA BLANCA DEL FORMULARIO ---------- */
+    .login-box {
+      background: #fff;          /* Fondo blanco */
+      padding: 30px;             /* Espacio interior entre el borde y el contenido */
+      border-radius: 8px;        /* Bordes redondeados */
+      box-shadow: 0 0 10px rgba(0,0,0,0.1); /* Sombra suave alrededor de la caja */
+      width: 250px;              /* Ancho fijo de la caja */
+    }
 
-/* Menú de navegación (Nav) */
-nav {
-    background-color: #34495e;
-    text-align: center;
-    padding: 0.5rem;
-}
+    .login-box h2 {
+      text-align: center;        /* Centra el título "Iniciar sesión" */
+      margin-bottom: 20px;       /* Espacio debajo del título */
+    }
 
-nav a {
-    color: white;
-    text-decoration: none;
-    padding: 0.5rem 1rem;
-    margin: 0 0.25rem;
-    display: inline-block;
-}
+    .login-box label {
+      display: block;            /* Cada etiqueta ocupa su propia línea */
+      margin-bottom: 5px;        /* Pequeño espacio antes del campo de texto */
+    }
 
-nav a:hover {
-    background-color: #1abc9c;
-    border-radius: 4px;
-}
+    .login-box input {
+      width: 100%;               /* El campo ocupa todo el ancho de la caja */
+      padding: 8px;               /* Espacio interior para que no quede pegado el texto */
+      margin-bottom: 15px;       /* Espacio entre un campo y el siguiente */
+      box-sizing: border-box;    /* El padding no aumenta el ancho total del campo */
+    }
 
-/* Contenedor principal y secciones */
-main {
-    max-width: 800px;
-    margin: 2rem auto;
-    padding: 0 1rem;
-}
+    .login-box button {
+      width: 100%;
+      padding: 10px;
+      background-color: #333;    /* Fondo oscuro del botón */
+      color: #fff;                /* Texto blanco */
+      border: none;               /* Sin borde */
+      border-radius: 4px;        /* Bordes ligeramente redondeados */
+      cursor: pointer;           /* El cursor cambia a "mano" al pasar por encima */
+    }
 
-section {
-    background: white;
-    padding: 1.5rem;
-    margin-bottom: 2rem;
-    border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-}
+    .login-box button:hover {
+      background-color: #555;    /* Cambia el color cuando el ratón pasa por encima */
+    }
+  </style>
+</head>
 
-h2 {
-    color: #2c3e50;
-    border-bottom: 2px solid #1abc9c;
-    padding-bottom: 0.3rem;
-}
+<body>
 
-/* Lista de ejemplos */
-ul {
-    padding-left: 1.2rem;
-}
+  <!-- Caja principal que contiene todo el formulario -->
+  <div class="login-box">
 
-li {
-    margin-bottom: 0.5rem;
-}
+    <h2>Iniciar sesión</h2>
 
-/* Botón de la sección de contacto */
-button {
-    background-color: #1abc9c;
-    color: white;
-    border: none;
-    padding: 0.7rem 1.5rem;
-    font-size: 1rem;
-    border-radius: 4px;
-    cursor: pointer;
-}
+    <!-- El formulario agrupa los campos de entrada y el botón -->
+    <form>
 
-button:hover {
-    background-color: #16a085;
-}
+      <!-- "for" conecta la etiqueta con el input que tiene el mismo "id" -->
+      <label for="usuario">Usuario</label>
+      <input type="text" id="usuario" name="usuario">
 
-/* Pie de página (Footer) */
-footer {
-    text-align: center;
-    padding: 1rem;
-    background-color: #2c3e50;
-    color: white;
-    margin-top: 2rem;
-}
+      <label for="password">Contraseña</label>
+      <input type="password" id="password" name="password">
+      <!-- type="password" hace que lo que se escribe se vea oculto con puntos -->
+
+      <button type="submit">Entrar</button>
+      <!-- type="submit" hace que el botón envíe el formulario -->
+
+    </form>
+  </div>
+
+</body>
+</html>
